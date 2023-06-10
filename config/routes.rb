@@ -9,7 +9,12 @@ devise_for :users
     resource :favorites, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
   end
-  resources :users, only: [:index,:show,:edit,:update]
+  resources :users, only: [:index,:show,:edit,:update]do
+    resource :relationships, only:[:create, :destroy]
+
+  get 'follows' => 'relationships#followed'
+  get 'followers' => 'relationships#follower'
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
