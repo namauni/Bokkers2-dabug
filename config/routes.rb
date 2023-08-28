@@ -12,6 +12,7 @@ devise_for :users
   end
   resources :users, only: [:index,:show,:edit,:update]do
     resource :relationships, only:[:create, :destroy]
+    get "search_form" => "users#search_form"
 
   get 'follows' => 'relationships#followed'
   get 'followers' => 'relationships#follower'
