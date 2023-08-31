@@ -19,3 +19,6 @@ ActiveStorage.start()
 
 global.$ = jQuery;
 window.$ = jQuery;
+
+require("chartkick") // 追記
+require("chart.js") // 追記
