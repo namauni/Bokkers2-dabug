@@ -10,9 +10,6 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    %body
-- if content_for?(:body_attributes)
-  = yield(:body_attributes)
     <%= render 'layouts/header' %>
       <main>
         <p id="notice"><%= notice %></p>
