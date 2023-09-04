@@ -8,10 +8,15 @@
     <script src="https://kit.fontawesome.com/12c2d9e2ec.js" crossorigin="anonymous"></script>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <%= render 'layouts/header' %>
-      <main>
+      <main
+    <% if content_for?(:body_attributes) %>  
+   <%= yield(:body_attributes) %>
+　<% end %>>
+        
         <p id="notice"><%= notice %></p>
       </main>
     <%= yield %>
